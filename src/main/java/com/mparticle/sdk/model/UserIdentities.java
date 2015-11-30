@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserIdentities {
 
-    @JsonProperty("customerid")
+    @JsonProperty("customer_id")
     private String customerid;
     @JsonProperty("email")
     private String email;

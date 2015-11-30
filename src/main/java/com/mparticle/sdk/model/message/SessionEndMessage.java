@@ -10,9 +10,7 @@ import com.mparticle.sdk.model.Message;
 public class SessionEndMessage extends Message {
 
     @JsonProperty("session_duration_ms")
-    private Double sessionDurationMs;
-    @JsonProperty("source_message_id")
-    private String sourceMessageId;
+    private Long sessionDurationMs;
 
     /**
      * 
@@ -20,7 +18,7 @@ public class SessionEndMessage extends Message {
      *     The sessionDurationMs
      */
     @JsonProperty("session_duration_ms")
-    public Double getSessionDurationMs() {
+    public Long getSessionDurationMs() {
         return sessionDurationMs;
     }
 
@@ -30,7 +28,7 @@ public class SessionEndMessage extends Message {
      *     The session_duration_ms
      */
     @JsonProperty("session_duration_ms")
-    public SessionEndMessage setSessionDurationMs(Double sessionDurationMs) {
+    public SessionEndMessage setSessionDurationMs(Long sessionDurationMs) {
         this.sessionDurationMs = sessionDurationMs;
         return this;
     }
