@@ -19,7 +19,7 @@ public class MParticleFileWriter implements Closeable {
     BufferedOutputStream bout = null;
     private int currentSize;
     ObjectMapper mapper = new ObjectMapper();
-    byte[] lineSeparator = System.lineSeparator().getBytes();
+    byte lineSeparator = '\n';
     public static final String TEMP_FILENAME = "mparticle-pending.tmp";
 
     public MParticleFileWriter(File directory, int maxFileSize, Logger logger) {
@@ -45,7 +45,7 @@ public class MParticleFileWriter implements Closeable {
             }
             bout.write(bytes);
             bout.write(lineSeparator);
-            currentSize += (bytes.length + lineSeparator.length);
+            currentSize += (bytes.length + 1);
         } catch (IOException e) {
             logger.print(Logger.Level.ERROR, e, "Error while writing to file.");
         }
