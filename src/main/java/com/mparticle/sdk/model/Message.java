@@ -8,14 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class Message {
 
-    @JsonProperty("application_transition_type")
-    protected String applicationTransitionType;
+    @JsonProperty("timestamp_unixtime_ms")
+    protected Long timestamp;
     @JsonProperty("event_id")
-    protected Double eventId;
+    protected Long eventId;
     @JsonProperty("session_uuid")
     protected String sessionUuid;
-    @JsonProperty("timestamp_unixtime_ms")
-    protected Double timestamp;
     @JsonProperty("location")
     protected Location location;
     @JsonProperty("device_current_state")
@@ -29,7 +27,7 @@ public abstract class Message {
      *     The eventId
      */
     @JsonProperty("event_id")
-    public Double getEventId() {
+    public Long getEventId() {
         return eventId;
     }
 
@@ -39,10 +37,12 @@ public abstract class Message {
      *     The event_id
      */
     @JsonProperty("event_id")
-    public Message setEventId(Double eventId) {
+    public Message setEventId(Long eventId) {
         this.eventId = eventId;
         return this;
     }
+
+
 
     /**
      * 
@@ -71,7 +71,7 @@ public abstract class Message {
      *     The timestamp
      */
     @JsonProperty("timestamp_unixtime_ms")
-    public Double getTimestamp() {
+    public Long getTimestamp() {
         return timestamp;
     }
 
@@ -81,7 +81,7 @@ public abstract class Message {
      *     The timestamp_unixtime_ms
      */
     @JsonProperty("timestamp_unixtime_ms")
-    public Message setTimestamp(Double timestamp) {
+    public Message setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }

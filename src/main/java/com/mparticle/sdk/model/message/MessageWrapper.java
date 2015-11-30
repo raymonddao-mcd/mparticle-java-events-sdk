@@ -10,6 +10,7 @@ public class MessageWrapper {
 
     @JsonProperty("data")
     private Message data;
+
     @JsonProperty("event_type")
     private String messageType;
 
