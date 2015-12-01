@@ -19,8 +19,7 @@ test {
 }
 
 dependencies {
-    compile 'com.fasterxml.jackson.core:jackson-core:2.6.3'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.3'
+    compile project(':s2s-models')
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.segment.backo:backo:1.0.0'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
@@ -46,9 +45,9 @@ uploadArchives {
 
             pom.project {
                 version = version
-                artifactId = 'java-bulk-sdk'
+                artifactId = 'java-s2s-sdk'
                 groupId = group
-                description 'mParticle Java Bulk Upload SDK'
+                description 'mParticle Java Server-to-Server SDK'
                 url 'http://www.mparticle.com'
                 developers {
                     developer {

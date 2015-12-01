@@ -85,7 +85,7 @@ public class MParticleTest {
                 userAttributes.put(Constants.UserAttributes.FIRST_NAME, "john");
                 userAttributes.put(Constants.UserAttributes.LAST_NAME, "doe");
                 UserIdentities userIdentities = new UserIdentities().setEmail("john.doe@gmail.com");
-                Batch.Builder builder = new Batch.Builder()
+                Batch.Builder builder = new Batch.Builder("some api key")
                         .applicationInfo(applicationInfo)
                         .deviceInfo(deviceInfo)
                         .events(events)
