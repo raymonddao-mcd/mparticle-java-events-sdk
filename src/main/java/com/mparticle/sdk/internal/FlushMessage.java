@@ -7,7 +7,7 @@ import com.mparticle.sdk.model.Message;
 import java.util.Arrays;
 
 class FlushMessage {
-    static final Batch FLUSH = new Batch.Builder().developmentMode(true).events(Arrays.asList(
+    static final Batch FLUSH = new Batch.Builder("api key").developmentMode(true).events(Arrays.asList(
             (Message) new CustomEvent("flush")
     )).build();
 

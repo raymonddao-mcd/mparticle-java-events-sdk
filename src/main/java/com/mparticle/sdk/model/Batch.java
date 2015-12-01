@@ -18,6 +18,7 @@ public class Batch {
     private Batch(){}
 
     private Batch(Builder builder) {
+        apiKey = builder.apiKey;
         if (builder.developmentMode == null) {
             throw new IllegalStateException("Must specify development mode");
         }else if (builder.developmentMode) {
@@ -25,6 +26,7 @@ public class Batch {
         }else {
             this.environment = ENVIRONMENT_PRODUCTION;
         }
+        this.apiKey = builder.apiKey;
         this.schemaVersion = builder.schemaVersion;
 
         this.deviceInfo = builder.deviceInfo;
@@ -63,6 +65,8 @@ public class Batch {
     private UserIdentities userIdentities;
     @JsonProperty("events")
     private List<MessageWrapper> events = new LinkedList<>();
+    @JsonProperty("api_key")
+    private String apiKey;
 
     /**
      * 
@@ -146,6 +150,7 @@ public class Batch {
 
     public static class Builder {
 
+        private String apiKey;
         private Integer schemaVersion;
         private DeviceInfo deviceInfo;
         private ApplicationInfo applicationInfo;
@@ -154,6 +159,14 @@ public class Batch {
         private UserIdentities userIdentities;
         private List<Message> messages = new ArrayList<Message>();
         private Boolean developmentMode;
+
+        private Builder(){}
+        public Builder(String apiKey) {
+            if (apiKey == null || apiKey.trim().length() < 1) {
+                throw new IllegalArgumentException("Must specify API key");
+            }
+            this.apiKey = apiKey;
+        }
 
         /**
          *
