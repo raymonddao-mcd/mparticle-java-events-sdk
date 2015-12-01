@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public abstract class Message {
 
     @JsonProperty("timestamp_unixtime_ms")
-    protected Long timestamp;
+    protected Long timestamp = System.currentTimeMillis();
     @JsonProperty("event_id")
     protected Long eventId;
     @JsonProperty("session_uuid")
