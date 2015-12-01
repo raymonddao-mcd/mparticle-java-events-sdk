@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 group 'com.mparticle'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = 1.7
 
 buildscript {
     repositories {
@@ -41,7 +41,7 @@ uploadArchives {
 
             pom.project {
                 version = version
-                artifactId = 'java-s2s-models'
+                artifactId = 's2s-models'
                 groupId = group
                 description 'mParticle Java Bulk Upload SDK'
                 url 'http://www.mparticle.com'

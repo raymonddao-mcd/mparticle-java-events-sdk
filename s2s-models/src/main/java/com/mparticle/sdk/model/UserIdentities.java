@@ -28,7 +28,7 @@ public class UserIdentities {
      * @return
      *     The customerid
      */
-    @JsonProperty("customerid")
+    @JsonProperty("customer_id")
     public String getCustomerid() {
         return customerid;
     }
@@ -38,7 +38,7 @@ public class UserIdentities {
      * @param customerId
      *     The customerid
      */
-    @JsonProperty("customerid")
+    @JsonProperty("customer_id")
     public UserIdentities setCustomerId(String customerId) {
         this.customerid = customerId;
         return this;

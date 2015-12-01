@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 group 'com.mparticle'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = 1.7
 
 buildscript {
     repositories {
@@ -45,7 +45,7 @@ uploadArchives {
 
             pom.project {
                 version = version
-                artifactId = 'java-s2s-sdk'
+                artifactId = 's2s-sdk'
                 groupId = group
                 description 'mParticle Java Server-to-Server SDK'
                 url 'http://www.mparticle.com'
