@@ -10,13 +10,15 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 
 /**
  * Converts messages to JSON and back.
  */
-public final class MessageSerializer {
+public final class MessageSerializer implements Serializable {
 
-    private final ObjectMapper mapper;
+    final ObjectMapper mapper;
+    private static final long serialVersionUID = 1L;
 
     public MessageSerializer() {
         mapper = new ObjectMapper();
@@ -74,4 +76,5 @@ public final class MessageSerializer {
     public String serialize(Object value) throws IOException{
         return mapper.writeValueAsString(value);
     }
+
 }
