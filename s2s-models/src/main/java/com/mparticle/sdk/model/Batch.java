@@ -35,18 +35,13 @@ public class Batch {
         this.deletedUserAttributes = builder.deletedUserAttributes;
         this.userIdentities = builder.userIdentities;
 
-        if (builder.messages == null || builder.messages.size() < 1) {
-            throw new IllegalStateException("Must include messages in Batch.");
-        }else{
-            for (Message message : builder.messages) {
-                this.events.add(
-                        new MessageWrapper()
-                                .setData(message)
-                                .setMessageType(message.getMessageType())
-                );
-            }
+        for (Message message : builder.messages) {
+            this.events.add(
+                    new MessageWrapper()
+                            .setData(message)
+                            .setMessageType(message.getMessageType())
+            );
         }
-
     }
 
     @JsonProperty("schema_version")
