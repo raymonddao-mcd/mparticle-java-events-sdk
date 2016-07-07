@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mparticle.sdk.model.message.MessageWrapper;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Batch {
@@ -31,7 +28,25 @@ public class Batch {
 
         this.deviceInfo = builder.deviceInfo;
         this.applicationInfo = builder.applicationInfo;
-        this.userAttributes = builder.userAttributes;
+        if (builder.userAttributes != null) {
+            this.userAttributes = new HashMap<String, Object>();
+            for (Map.Entry<String, String> attribute : builder.userAttributes.entrySet()) {
+                this.userAttributes.put(attribute.getKey(), attribute.getValue());
+            }
+        }
+
+        if (builder.userAttributeLists != null) {
+            if (this.userAttributes == null) {
+                this.userAttributes = new HashMap<String, Object>();
+            }
+            for (Map.Entry<String, List<String>> attribute : builder.userAttributeLists.entrySet()) {
+                if (this.userAttributes.containsKey(attribute.getKey())) {
+                    throw new IllegalArgumentException("Duplicate user attribute: " + attribute.getKey());
+                }
+                this.userAttributes.put(attribute.getKey(), attribute.getValue());
+            }
+        }
+
         this.deletedUserAttributes = builder.deletedUserAttributes;
         this.userIdentities = builder.userIdentities;
 
@@ -53,7 +68,7 @@ public class Batch {
     @JsonProperty("application_info")
     private ApplicationInfo applicationInfo;
     @JsonProperty("user_attributes")
-    private Map<String, String> userAttributes;
+    private Map<String, Object> userAttributes;
     @JsonProperty("deleted_user_attributes")
     private List<String> deletedUserAttributes = new ArrayList<String>();
     @JsonProperty("user_identities")
@@ -109,7 +124,7 @@ public class Batch {
      *     The userAttributes
      */
     @JsonProperty("user_attributes")
-    public Map<String, String> getUserAttributes() {
+    public Map<String, Object> getUserAttributes() {
         return userAttributes;
     }
 
@@ -150,6 +165,7 @@ public class Batch {
         private DeviceInfo deviceInfo;
         private ApplicationInfo applicationInfo;
         private Map<String, String> userAttributes;
+        private Map<String, List<String>> userAttributeLists;
         private List<String> deletedUserAttributes = new ArrayList<String>();
         private UserIdentities userIdentities;
         private List<Message> messages = new ArrayList<Message>();
@@ -242,19 +258,39 @@ public class Batch {
         /**
          *
          * @return
-         *     The userAttributes
+         *     The user attributes
          */
         public Map<String, String> getUserAttributes() {
             return userAttributes;
         }
 
+
+        /**
+         *
+         * @return
+         *     the user attribute lists
+         */
+        public Map<String, List<String>> getUserAttributeLists() {
+            return userAttributeLists;
+        }
+
         /**
          *
          * @param userAttributes
-         *     The user_attributes
+         *     string attributes to associate with a user. User attributes and user attribute lists cannot have the same key.
          */
         public Builder userAttributes(Map<String, String> userAttributes) {
             this.userAttributes = userAttributes;
+            return this;
+        }
+
+        /**
+         *
+         * @param userAttributeLists lists
+         *      string-list attributes to associate with a user. User attributes and user attribute lists cannot have the same key.
+         */
+        public Builder userAttributeLists(Map<String, List<String>> userAttributeLists) {
+            this.userAttributeLists = userAttributeLists;
             return this;
         }
 
