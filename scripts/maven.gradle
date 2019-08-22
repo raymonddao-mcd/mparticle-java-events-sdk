@@ -56,7 +56,7 @@ uploadArchives{
                 artifactId project.name
                 name 'mParticle server-side Java SDK'
                 description "mParticle SDK for server-side Java environments"
-                url 'https://github.com/mparticle/mparticle-sdk-java'
+                url 'https://github.com/mparticle/mparticle-java-events-sdk'
 
                 licenses {
                     license {
@@ -66,9 +66,9 @@ uploadArchives{
                 }
 
                 scm {
-                    url 'https://github.com/mparticle/mparticle-sdk-java'
-                    connection 'scm:git:https://github.com/mparticle/mparticle-sdk-java'
-                    developerConnection 'scm:git:git@github.com:mparticle/mparticle-sdk-java.git'
+                    url 'https://github.com/mparticle/mparticle-java-events-sdk'
+                    connection 'scm:git:https://github.com/mparticle/mparticle-java-events-sdk'
+                    developerConnection 'scm:git:git@github.com:mparticle/mparticle-java-events-sdk.git'
                 }
 
                 developers {
