@@ -1,2 +1,1 @@
-include ':s2s-sdk'
-include ':s2s-models'
+rootProject.name = "server-events-sdk"
