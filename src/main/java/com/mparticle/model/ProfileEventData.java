@@ -1,15 +1,9 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * ProfileEventData
@@ -27,7 +21,6 @@ public class ProfileEventData extends CommonEventData {
   /**
    * Gets or Sets profileEventType
    */
-  @JsonAdapter(ProfileEventTypeEnum.Adapter.class)
   public enum ProfileEventTypeEnum {
     SIGNUP("signup"),
     
@@ -61,19 +54,6 @@ public class ProfileEventData extends CommonEventData {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ProfileEventTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ProfileEventTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ProfileEventTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ProfileEventTypeEnum.fromValue(value);
-      }
     }
   }
 

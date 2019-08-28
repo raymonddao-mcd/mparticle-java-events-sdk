@@ -1,17 +1,12 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * ProductAction
@@ -21,7 +16,6 @@ public class ProductAction {
   /**
    * Gets or Sets action
    */
-  @JsonAdapter(Action.Adapter.class)
   public enum Action {
     ADD_TO_CART("add_to_cart"),
     
@@ -65,19 +59,6 @@ public class ProductAction {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<Action> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final Action enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public Action read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return Action.fromValue(value);
-      }
     }
   }
 

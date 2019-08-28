@@ -1,18 +1,11 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import com.mparticle.model.Promotion;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * PromotionAction
@@ -22,7 +15,6 @@ public class PromotionAction {
   /**
    * Gets or Sets action
    */
-  @JsonAdapter(ActionEnum.Adapter.class)
   public enum ActionEnum {
     VIEW("view"),
     
@@ -50,19 +42,6 @@ public class PromotionAction {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ActionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ActionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ActionEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ActionEnum.fromValue(value);
-      }
     }
   }
 

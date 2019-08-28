@@ -1,16 +1,9 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import com.mparticle.model.OptOutEventData;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * OptOutEvent
@@ -24,7 +17,6 @@ public class OptOutEvent {
   /**
    * Gets or Sets eventType
    */
-  @JsonAdapter(EventTypeEnum.Adapter.class)
   public enum EventTypeEnum {
     OPT_OUT("opt_out");
 
@@ -50,19 +42,6 @@ public class OptOutEvent {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<EventTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EventTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EventTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return EventTypeEnum.fromValue(value);
-      }
     }
   }
 

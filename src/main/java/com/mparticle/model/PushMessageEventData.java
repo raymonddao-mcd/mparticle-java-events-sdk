@@ -1,15 +1,9 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * PushMessageEventData
@@ -23,7 +17,6 @@ public class PushMessageEventData extends CommonEventData {
   /**
    * Gets or Sets pushMessageType
    */
-  @JsonAdapter(PushMessageTypeEnum.Adapter.class)
   public enum PushMessageTypeEnum {
     SENT("sent"),
     
@@ -54,19 +47,6 @@ public class PushMessageEventData extends CommonEventData {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<PushMessageTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PushMessageTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PushMessageTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return PushMessageTypeEnum.fromValue(value);
-      }
-    }
   }
 
   public static final String SERIALIZED_NAME_PUSH_MESSAGE_TYPE = "push_message_type";
@@ -88,7 +68,6 @@ public class PushMessageEventData extends CommonEventData {
   /**
    * Gets or Sets applicationState
    */
-  @JsonAdapter(ApplicationStateEnum.Adapter.class)
   public enum ApplicationStateEnum {
     NOT_RUNNING("not_running"),
     
@@ -119,19 +98,6 @@ public class PushMessageEventData extends CommonEventData {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<ApplicationStateEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ApplicationStateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ApplicationStateEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ApplicationStateEnum.fromValue(value);
-      }
-    }
   }
 
   public static final String SERIALIZED_NAME_APPLICATION_STATE = "application_state";
@@ -145,7 +111,6 @@ public class PushMessageEventData extends CommonEventData {
   /**
    * Gets or Sets pushMessageBehavior
    */
-  @JsonAdapter(PushMessageBehaviorEnum.Adapter.class)
   public enum PushMessageBehaviorEnum {
     RECEIVED("Received"),
     
@@ -179,19 +144,6 @@ public class PushMessageEventData extends CommonEventData {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PushMessageBehaviorEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PushMessageBehaviorEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PushMessageBehaviorEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return PushMessageBehaviorEnum.fromValue(value);
-      }
     }
   }
 

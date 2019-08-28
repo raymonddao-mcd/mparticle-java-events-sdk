@@ -1,7 +1,6 @@
 package com.mparticle.model;
 
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -46,7 +45,6 @@ public class Batch {
   /**
    * Gets or Sets environment
    */
-  @JsonAdapter(Environment.Adapter.class)
   public enum Environment {
     UNKNOWN("unknown"),
     
@@ -76,19 +74,6 @@ public class Batch {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<Environment> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final Environment enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public Environment read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return Environment.fromValue(value);
-      }
     }
   }
 

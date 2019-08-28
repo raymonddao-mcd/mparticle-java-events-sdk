@@ -1,15 +1,9 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * ApplicationStateTransitionEventData
@@ -39,7 +33,6 @@ public class ApplicationStateTransitionEventData extends CommonEventData {
   /**
    * Gets or Sets applicationTransitionType
    */
-  @JsonAdapter(ApplicationTransitionTypeEnum.Adapter.class)
   public enum ApplicationTransitionTypeEnum {
     INITIALIZED("application_initialized"),
     
@@ -71,19 +64,6 @@ public class ApplicationStateTransitionEventData extends CommonEventData {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ApplicationTransitionTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ApplicationTransitionTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ApplicationTransitionTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ApplicationTransitionTypeEnum.fromValue(value);
-      }
     }
   }
 

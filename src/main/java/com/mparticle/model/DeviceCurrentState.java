@@ -1,16 +1,10 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * DeviceCurrentState
@@ -80,7 +74,6 @@ public class DeviceCurrentState {
   /**
    * Gets or Sets deviceOrientation
    */
-  @JsonAdapter(DeviceOrientationEnum.Adapter.class)
   public enum DeviceOrientationEnum {
     PORTRAIT("portrait"),
     
@@ -121,19 +114,6 @@ public class DeviceCurrentState {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<DeviceOrientationEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final DeviceOrientationEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public DeviceOrientationEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return DeviceOrientationEnum.fromValue(value);
-      }
-    }
   }
 
   public static final String SERIALIZED_NAME_DEVICE_ORIENTATION = "device_orientation";
@@ -143,7 +123,6 @@ public class DeviceCurrentState {
   /**
    * Gets or Sets statusBarOrientation
    */
-  @JsonAdapter(StatusBarOrientationEnum.Adapter.class)
   public enum StatusBarOrientationEnum {
     PORTRAIT("portrait"),
     
@@ -183,19 +162,6 @@ public class DeviceCurrentState {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<StatusBarOrientationEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final StatusBarOrientationEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public StatusBarOrientationEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StatusBarOrientationEnum.fromValue(value);
-      }
     }
   }
 

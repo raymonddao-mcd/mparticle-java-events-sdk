@@ -3,7 +3,6 @@ package com.mparticle.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -39,7 +38,6 @@ public class DeviceInformation {
   /**
    * Gets or Sets platform
    */
-  @JsonAdapter(PlatformEnum.Adapter.class)
   public enum PlatformEnum {
     IOS("iOS"),
     
@@ -81,19 +79,6 @@ public class DeviceInformation {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PlatformEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PlatformEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PlatformEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return PlatformEnum.fromValue(value);
-      }
     }
   }
 

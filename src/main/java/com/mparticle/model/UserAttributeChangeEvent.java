@@ -1,16 +1,9 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import com.mparticle.model.UserAttributeChangeEventData;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * UserAttributeChangeEvent
@@ -24,7 +17,6 @@ public class UserAttributeChangeEvent {
   /**
    * Gets or Sets eventType
    */
-  @JsonAdapter(EventTypeEnum.Adapter.class)
   public enum EventTypeEnum {
     USER_ATTRIBUTE_CHANGE("user_attribute_change");
 
@@ -50,19 +42,6 @@ public class UserAttributeChangeEvent {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<EventTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final EventTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public EventTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return EventTypeEnum.fromValue(value);
-      }
     }
   }
 

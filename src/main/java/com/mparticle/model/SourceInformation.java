@@ -1,15 +1,9 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * SourceInformation
@@ -19,7 +13,6 @@ public class SourceInformation {
   /**
    * Gets or Sets channel
    */
-  @JsonAdapter(ChannelEnum.Adapter.class)
   public enum ChannelEnum {
     NATIVE("native"),
     
@@ -55,19 +48,6 @@ public class SourceInformation {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ChannelEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ChannelEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ChannelEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ChannelEnum.fromValue(value);
-      }
     }
   }
 

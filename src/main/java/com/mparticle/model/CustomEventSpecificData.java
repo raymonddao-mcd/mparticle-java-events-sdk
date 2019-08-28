@@ -1,18 +1,11 @@
 package com.mparticle.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * CustomEventSpecificData
@@ -22,7 +15,6 @@ public class CustomEventSpecificData extends CommonEventData {
   /**
    * Gets or Sets customEventType
    */
-  @JsonAdapter(CustomEventTypeEnum.Adapter.class)
   public enum CustomEventTypeEnum {
     NAVIGATION("navigation"),
     
@@ -62,19 +54,6 @@ public class CustomEventSpecificData extends CommonEventData {
         }
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<CustomEventTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final CustomEventTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public CustomEventTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return CustomEventTypeEnum.fromValue(value);
-      }
     }
   }
 
