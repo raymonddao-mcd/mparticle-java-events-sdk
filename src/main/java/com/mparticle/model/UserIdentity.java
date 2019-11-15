@@ -20,7 +20,7 @@ public class UserIdentity {
 
   public static final String SERIALIZED_NAME_TIMESTAMP_UNIXTIME_MS = "timestamp_unixtime_ms";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP_UNIXTIME_MS)
-  private Integer timestampUnixtimeMs;
+  private Long timestampUnixtimeMs;
 
   public static final String SERIALIZED_NAME_CREATED_THIS_BATCH = "created_this_batch";
   @SerializedName(SERIALIZED_NAME_CREATED_THIS_BATCH)
@@ -62,7 +62,7 @@ public class UserIdentity {
     this.identity = identity;
   }
 
-  public UserIdentity timestampUnixtimeMs(Integer timestampUnixtimeMs) {
+  public UserIdentity timestampUnixtimeMs(Long timestampUnixtimeMs) {
     this.timestampUnixtimeMs = timestampUnixtimeMs;
     return this;
   }
@@ -72,11 +72,11 @@ public class UserIdentity {
    * @return timestampUnixtimeMs
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getTimestampUnixtimeMs() {
+  public Long getTimestampUnixtimeMs() {
     return timestampUnixtimeMs;
   }
 
-  public void setTimestampUnixtimeMs(Integer timestampUnixtimeMs) {
+  public void setTimestampUnixtimeMs(Long timestampUnixtimeMs) {
     this.timestampUnixtimeMs = timestampUnixtimeMs;
   }
 

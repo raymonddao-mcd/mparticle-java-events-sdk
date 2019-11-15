@@ -24,7 +24,7 @@ public class GDPRConsentState {
 
   public static final String SERIALIZED_NAME_TIMESTAMP_UNIXTIME_MS = "timestamp_unixtime_ms";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP_UNIXTIME_MS)
-  private Integer timestampUnixtimeMs;
+  private Long timestampUnixtimeMs;
 
   public static final String SERIALIZED_NAME_LOCATION = "location";
   @SerializedName(SERIALIZED_NAME_LOCATION)
@@ -88,7 +88,7 @@ public class GDPRConsentState {
     this.consented = consented;
   }
 
-  public GDPRConsentState timestampUnixtimeMs(Integer timestampUnixtimeMs) {
+  public GDPRConsentState timestampUnixtimeMs(Long timestampUnixtimeMs) {
     this.timestampUnixtimeMs = timestampUnixtimeMs;
     return this;
   }
@@ -98,11 +98,11 @@ public class GDPRConsentState {
    * @return timestampUnixtimeMs
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getTimestampUnixtimeMs() {
+  public Long getTimestampUnixtimeMs() {
     return timestampUnixtimeMs;
   }
 
-  public void setTimestampUnixtimeMs(Integer timestampUnixtimeMs) {
+  public void setTimestampUnixtimeMs(Long timestampUnixtimeMs) {
     this.timestampUnixtimeMs = timestampUnixtimeMs;
   }
 

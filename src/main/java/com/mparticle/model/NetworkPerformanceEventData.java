@@ -20,15 +20,15 @@ public class NetworkPerformanceEventData extends CommonEventData {
 
   public static final String SERIALIZED_NAME_TIME_ELAPSED = "time_elapsed";
   @SerializedName(SERIALIZED_NAME_TIME_ELAPSED)
-  private Integer timeElapsed;
+  private Long timeElapsed;
 
   public static final String SERIALIZED_NAME_BYTES_IN = "bytes_in";
   @SerializedName(SERIALIZED_NAME_BYTES_IN)
-  private Integer bytesIn;
+  private Long bytesIn;
 
   public static final String SERIALIZED_NAME_BYTES_OUT = "bytes_out";
   @SerializedName(SERIALIZED_NAME_BYTES_OUT)
-  private Integer bytesOut;
+  private Long bytesOut;
 
   public static final String SERIALIZED_NAME_RESPONSE_CODE = "response_code";
   @SerializedName(SERIALIZED_NAME_RESPONSE_CODE)
@@ -75,7 +75,7 @@ public class NetworkPerformanceEventData extends CommonEventData {
     this.url = url;
   }
 
-  public NetworkPerformanceEventData timeElapsed(Integer timeElapsed) {
+  public NetworkPerformanceEventData timeElapsed(Long timeElapsed) {
     this.timeElapsed = timeElapsed;
     return this;
   }
@@ -86,15 +86,15 @@ public class NetworkPerformanceEventData extends CommonEventData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getTimeElapsed() {
+  public Long getTimeElapsed() {
     return timeElapsed;
   }
 
-  public void setTimeElapsed(Integer timeElapsed) {
+  public void setTimeElapsed(Long timeElapsed) {
     this.timeElapsed = timeElapsed;
   }
 
-  public NetworkPerformanceEventData bytesIn(Integer bytesIn) {
+  public NetworkPerformanceEventData bytesIn(Long bytesIn) {
     this.bytesIn = bytesIn;
     return this;
   }
@@ -105,15 +105,15 @@ public class NetworkPerformanceEventData extends CommonEventData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getBytesIn() {
+  public Long getBytesIn() {
     return bytesIn;
   }
 
-  public void setBytesIn(Integer bytesIn) {
+  public void setBytesIn(Long bytesIn) {
     this.bytesIn = bytesIn;
   }
 
-  public NetworkPerformanceEventData bytesOut(Integer bytesOut) {
+  public NetworkPerformanceEventData bytesOut(Long bytesOut) {
     this.bytesOut = bytesOut;
     return this;
   }
@@ -124,11 +124,11 @@ public class NetworkPerformanceEventData extends CommonEventData {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getBytesOut() {
+  public Long getBytesOut() {
     return bytesOut;
   }
 
-  public void setBytesOut(Integer bytesOut) {
+  public void setBytesOut(Long bytesOut) {
     this.bytesOut = bytesOut;
   }
 

@@ -13,7 +13,7 @@ import java.util.Objects;
 public class DeviceCurrentState {
   public static final String SERIALIZED_NAME_TIME_SINCE_START_MS = "time_since_start_ms";
   @SerializedName(SERIALIZED_NAME_TIME_SINCE_START_MS)
-  private Integer timeSinceStartMs;
+  private Long timeSinceStartMs;
 
   public static final String SERIALIZED_NAME_BATTERY_LEVEL = "battery_level";
   @SerializedName(SERIALIZED_NAME_BATTERY_LEVEL)
@@ -33,15 +33,15 @@ public class DeviceCurrentState {
 
   public static final String SERIALIZED_NAME_TOTAL_SYSTEM_MEMORY_USAGE_BYTES = "total_system_memory_usage_bytes";
   @SerializedName(SERIALIZED_NAME_TOTAL_SYSTEM_MEMORY_USAGE_BYTES)
-  private Integer totalSystemMemoryUsageBytes;
+  private Long totalSystemMemoryUsageBytes;
 
   public static final String SERIALIZED_NAME_DISK_SPACE_FREE_BYTES = "disk_space_free_bytes";
   @SerializedName(SERIALIZED_NAME_DISK_SPACE_FREE_BYTES)
-  private Integer diskSpaceFreeBytes;
+  private Long diskSpaceFreeBytes;
 
   public static final String SERIALIZED_NAME_EXTERNAL_DISK_SPACE_FREE_BYTES = "external_disk_space_free_bytes";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_DISK_SPACE_FREE_BYTES)
-  private Integer externalDiskSpaceFreeBytes;
+  private Long externalDiskSpaceFreeBytes;
 
   public static final String SERIALIZED_NAME_CPU = "cpu";
   @SerializedName(SERIALIZED_NAME_CPU)
@@ -169,7 +169,7 @@ public class DeviceCurrentState {
   @SerializedName(SERIALIZED_NAME_STATUS_BAR_ORIENTATION)
   private StatusBarOrientationEnum statusBarOrientation;
 
-  public DeviceCurrentState timeSinceStartMs(Integer timeSinceStartMs) {
+  public DeviceCurrentState timeSinceStartMs(Long timeSinceStartMs) {
     this.timeSinceStartMs = timeSinceStartMs;
     return this;
   }
@@ -180,11 +180,11 @@ public class DeviceCurrentState {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getTimeSinceStartMs() {
+  public Long getTimeSinceStartMs() {
     return timeSinceStartMs;
   }
 
-  public void setTimeSinceStartMs(Integer timeSinceStartMs) {
+  public void setTimeSinceStartMs(Long timeSinceStartMs) {
     this.timeSinceStartMs = timeSinceStartMs;
   }
 
@@ -264,7 +264,7 @@ public class DeviceCurrentState {
     this.gpsState = gpsState;
   }
 
-  public DeviceCurrentState totalSystemMemoryUsageBytes(Integer totalSystemMemoryUsageBytes) {
+  public DeviceCurrentState totalSystemMemoryUsageBytes(Long totalSystemMemoryUsageBytes) {
     this.totalSystemMemoryUsageBytes = totalSystemMemoryUsageBytes;
     return this;
   }
@@ -275,15 +275,15 @@ public class DeviceCurrentState {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getTotalSystemMemoryUsageBytes() {
+  public Long getTotalSystemMemoryUsageBytes() {
     return totalSystemMemoryUsageBytes;
   }
 
-  public void setTotalSystemMemoryUsageBytes(Integer totalSystemMemoryUsageBytes) {
+  public void setTotalSystemMemoryUsageBytes(Long totalSystemMemoryUsageBytes) {
     this.totalSystemMemoryUsageBytes = totalSystemMemoryUsageBytes;
   }
 
-  public DeviceCurrentState diskSpaceFreeBytes(Integer diskSpaceFreeBytes) {
+  public DeviceCurrentState diskSpaceFreeBytes(Long diskSpaceFreeBytes) {
     this.diskSpaceFreeBytes = diskSpaceFreeBytes;
     return this;
   }
@@ -294,15 +294,15 @@ public class DeviceCurrentState {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getDiskSpaceFreeBytes() {
+  public Long getDiskSpaceFreeBytes() {
     return diskSpaceFreeBytes;
   }
 
-  public void setDiskSpaceFreeBytes(Integer diskSpaceFreeBytes) {
+  public void setDiskSpaceFreeBytes(Long diskSpaceFreeBytes) {
     this.diskSpaceFreeBytes = diskSpaceFreeBytes;
   }
 
-  public DeviceCurrentState externalDiskSpaceFreeBytes(Integer externalDiskSpaceFreeBytes) {
+  public DeviceCurrentState externalDiskSpaceFreeBytes(Long externalDiskSpaceFreeBytes) {
     this.externalDiskSpaceFreeBytes = externalDiskSpaceFreeBytes;
     return this;
   }
@@ -313,11 +313,11 @@ public class DeviceCurrentState {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getExternalDiskSpaceFreeBytes() {
+  public Long getExternalDiskSpaceFreeBytes() {
     return externalDiskSpaceFreeBytes;
   }
 
-  public void setExternalDiskSpaceFreeBytes(Integer externalDiskSpaceFreeBytes) {
+  public void setExternalDiskSpaceFreeBytes(Long externalDiskSpaceFreeBytes) {
     this.externalDiskSpaceFreeBytes = externalDiskSpaceFreeBytes;
   }
 

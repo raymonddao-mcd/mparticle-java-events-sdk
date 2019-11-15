@@ -12,11 +12,11 @@ import java.util.Objects;
 public class ProfileEventData extends CommonEventData {
   public static final String SERIALIZED_NAME_PREVIOUS_MPID = "previous_mpid";
   @SerializedName(SERIALIZED_NAME_PREVIOUS_MPID)
-  private Integer previousMpid;
+  private Long previousMpid;
 
   public static final String SERIALIZED_NAME_CURRENT_MPID = "current_mpid";
   @SerializedName(SERIALIZED_NAME_CURRENT_MPID)
-  private Integer currentMpid;
+  private Long currentMpid;
 
   /**
    * Gets or Sets profileEventType
@@ -61,7 +61,7 @@ public class ProfileEventData extends CommonEventData {
   @SerializedName(SERIALIZED_NAME_PROFILE_EVENT_TYPE)
   private ProfileEventTypeEnum profileEventType;
 
-  public ProfileEventData previousMpid(Integer previousMpid) {
+  public ProfileEventData previousMpid(Long previousMpid) {
     this.previousMpid = previousMpid;
     return this;
   }
@@ -71,15 +71,15 @@ public class ProfileEventData extends CommonEventData {
    * @return previousMpid
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getPreviousMpid() {
+  public Long getPreviousMpid() {
     return previousMpid;
   }
 
-  public void setPreviousMpid(Integer previousMpid) {
+  public void setPreviousMpid(Long previousMpid) {
     this.previousMpid = previousMpid;
   }
 
-  public ProfileEventData currentMpid(Integer currentMpid) {
+  public ProfileEventData currentMpid(Long currentMpid) {
     this.currentMpid = currentMpid;
     return this;
   }
@@ -89,11 +89,11 @@ public class ProfileEventData extends CommonEventData {
    * @return currentMpid
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getCurrentMpid() {
+  public Long getCurrentMpid() {
     return currentMpid;
   }
 
-  public void setCurrentMpid(Integer currentMpid) {
+  public void setCurrentMpid(Long currentMpid) {
     this.currentMpid = currentMpid;
   }
 

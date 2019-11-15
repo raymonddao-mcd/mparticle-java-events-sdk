@@ -12,9 +12,9 @@ import java.util.Objects;
 public class SessionEndEventData extends CommonEventData {
   public static final String SERIALIZED_NAME_SESSION_DURATION_MS = "session_duration_ms";
   @SerializedName(SERIALIZED_NAME_SESSION_DURATION_MS)
-  private Integer sessionDurationMs;
+  private Long sessionDurationMs;
 
-  public SessionEndEventData sessionDurationMs(Integer sessionDurationMs) {
+  public SessionEndEventData sessionDurationMs(Long sessionDurationMs) {
     this.sessionDurationMs = sessionDurationMs;
     return this;
   }
@@ -24,11 +24,11 @@ public class SessionEndEventData extends CommonEventData {
    * @return sessionDurationMs
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getSessionDurationMs() {
+  public Long getSessionDurationMs() {
     return sessionDurationMs;
   }
 
-  public void setSessionDurationMs(Integer sessionDurationMs) {
+  public void setSessionDurationMs(Long sessionDurationMs) {
     this.sessionDurationMs = sessionDurationMs;
   }
 

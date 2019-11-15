@@ -51,7 +51,7 @@ public class Product {
 
   public static final String SERIALIZED_NAME_ADDED_TO_CART_TIME_MS = "added_to_cart_time_ms";
   @SerializedName(SERIALIZED_NAME_ADDED_TO_CART_TIME_MS)
-  private Integer addedToCartTimeMs;
+  private Long addedToCartTimeMs;
 
   public static final String SERIALIZED_NAME_TOTAL_PRODUCT_AMOUNT = "total_product_amount";
   @SerializedName(SERIALIZED_NAME_TOTAL_PRODUCT_AMOUNT)
@@ -223,7 +223,7 @@ public class Product {
     this.couponCode = couponCode;
   }
 
-  public Product addedToCartTimeMs(Integer addedToCartTimeMs) {
+  public Product addedToCartTimeMs(Long addedToCartTimeMs) {
     this.addedToCartTimeMs = addedToCartTimeMs;
     return this;
   }
@@ -233,11 +233,11 @@ public class Product {
    * @return addedToCartTimeMs
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getAddedToCartTimeMs() {
+  public Long getAddedToCartTimeMs() {
     return addedToCartTimeMs;
   }
 
-  public void setAddedToCartTimeMs(Integer addedToCartTimeMs) {
+  public void setAddedToCartTimeMs(Long addedToCartTimeMs) {
     this.addedToCartTimeMs = addedToCartTimeMs;
   }
 

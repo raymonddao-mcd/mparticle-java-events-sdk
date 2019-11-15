@@ -14,7 +14,7 @@ import java.util.Objects;
 public class CommonEventData {
   public static final String SERIALIZED_NAME_TIMESTAMP_UNIXTIME_MS = "timestamp_unixtime_ms";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP_UNIXTIME_MS)
-  private Integer timestampUnixtimeMs;
+  private Long timestampUnixtimeMs;
 
   public static final String SERIALIZED_NAME_EVENT_ID = "event_id";
   @SerializedName(SERIALIZED_NAME_EVENT_ID)
@@ -34,11 +34,11 @@ public class CommonEventData {
 
   public static final String SERIALIZED_NAME_SESSION_START_UNIXTIME_MS = "session_start_unixtime_ms";
   @SerializedName(SERIALIZED_NAME_SESSION_START_UNIXTIME_MS)
-  private Integer sessionStartUnixtimeMs;
+  private Long sessionStartUnixtimeMs;
 
   public static final String SERIALIZED_NAME_EVENT_START_UNIXTIME_MS = "event_start_unixtime_ms";
   @SerializedName(SERIALIZED_NAME_EVENT_START_UNIXTIME_MS)
-  private Integer eventStartUnixtimeMs;
+  private Long eventStartUnixtimeMs;
 
   public static final String SERIALIZED_NAME_CUSTOM_ATTRIBUTES = "custom_attributes";
   @SerializedName(SERIALIZED_NAME_CUSTOM_ATTRIBUTES)
@@ -88,7 +88,7 @@ public class CommonEventData {
   @SerializedName(SERIALIZED_NAME_EVENT_SYSTEM_NOTIFICATION_INFO)
   private EventSystemNotificationInfo eventSystemNotificationInfo = null;
 
-  public CommonEventData timestampUnixtimeMs(Integer timestampUnixtimeMs) {
+  public CommonEventData timestampUnixtimeMs(Long timestampUnixtimeMs) {
     this.timestampUnixtimeMs = timestampUnixtimeMs;
     return this;
   }
@@ -99,11 +99,11 @@ public class CommonEventData {
    **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getTimestampUnixtimeMs() {
+  public Long getTimestampUnixtimeMs() {
     return timestampUnixtimeMs;
   }
 
-  public void setTimestampUnixtimeMs(Integer timestampUnixtimeMs) {
+  public void setTimestampUnixtimeMs(Long timestampUnixtimeMs) {
     this.timestampUnixtimeMs = timestampUnixtimeMs;
   }
 
@@ -174,7 +174,7 @@ public class CommonEventData {
     this.sessionUuid = sessionUuid;
   }
 
-  public CommonEventData sessionStartUnixtimeMs(Integer sessionStartUnixtimeMs) {
+  public CommonEventData sessionStartUnixtimeMs(Long sessionStartUnixtimeMs) {
     this.sessionStartUnixtimeMs = sessionStartUnixtimeMs;
     return this;
   }
@@ -185,15 +185,15 @@ public class CommonEventData {
    **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getSessionStartUnixtimeMs() {
+  public Long getSessionStartUnixtimeMs() {
     return sessionStartUnixtimeMs;
   }
 
-  public void setSessionStartUnixtimeMs(Integer sessionStartUnixtimeMs) {
+  public void setSessionStartUnixtimeMs(Long sessionStartUnixtimeMs) {
     this.sessionStartUnixtimeMs = sessionStartUnixtimeMs;
   }
 
-  public CommonEventData eventStartUnixtimeMs(Integer eventStartUnixtimeMs) {
+  public CommonEventData eventStartUnixtimeMs(Long eventStartUnixtimeMs) {
     this.eventStartUnixtimeMs = eventStartUnixtimeMs;
     return this;
   }
@@ -204,11 +204,11 @@ public class CommonEventData {
    **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public Integer getEventStartUnixtimeMs() {
+  public Long getEventStartUnixtimeMs() {
     return eventStartUnixtimeMs;
   }
 
-  public void setEventStartUnixtimeMs(Integer eventStartUnixtimeMs) {
+  public void setEventStartUnixtimeMs(Long eventStartUnixtimeMs) {
     this.eventStartUnixtimeMs = eventStartUnixtimeMs;
   }
 
