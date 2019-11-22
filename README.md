@@ -22,7 +22,7 @@ The SDK is available via Maven Central and jCenter.
 #### Gradle
 
 ```groovy
-implementation 'com:mparticle:server-events-sdk:2+'
+implementation 'com.mparticle:server-events-sdk:2.1.0'
 ```
 
 #### Maven
@@ -31,7 +31,7 @@ implementation 'com:mparticle:server-events-sdk:2+'
 <dependency>
   <groupId>com.mparticle</groupId>
   <artifactId>server-events-sdk</artifactId>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
 </dependency>
 ```
 
