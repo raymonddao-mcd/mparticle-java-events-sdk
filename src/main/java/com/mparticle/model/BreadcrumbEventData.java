@@ -6,10 +6,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
- * BreakcrumbData
+ * BreadcrumbEventData
  */
 
-public class BreakcrumbData {
+public class BreadcrumbEventData extends CommonEventData {
   public static final String SERIALIZED_NAME_SESSION_NUMBER = "session_number";
   @SerializedName(SERIALIZED_NAME_SESSION_NUMBER)
   private Integer sessionNumber;
@@ -18,12 +18,12 @@ public class BreakcrumbData {
   @SerializedName(SERIALIZED_NAME_LABEL)
   private String label;
 
-  public BreakcrumbData sessionNumber(Integer sessionNumber) {
+  public BreadcrumbEventData sessionNumber(Integer sessionNumber) {
     this.sessionNumber = sessionNumber;
     return this;
   }
 
-   /**
+  /**
    * Get sessionNumber
    * @return sessionNumber
   **/
@@ -37,7 +37,7 @@ public class BreakcrumbData {
     this.sessionNumber = sessionNumber;
   }
 
-  public BreakcrumbData label(String label) {
+  public BreadcrumbEventData label(String label) {
     this.label = label;
     return this;
   }
@@ -64,9 +64,9 @@ public class BreakcrumbData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BreakcrumbData breakcrumbData = (BreakcrumbData) o;
-    return Objects.equals(this.sessionNumber, breakcrumbData.sessionNumber) &&
-        Objects.equals(this.label, breakcrumbData.label);
+    BreadcrumbEventData breadcrumbEventData = (BreadcrumbEventData) o;
+    return Objects.equals(this.sessionNumber, breadcrumbEventData.sessionNumber) &&
+        Objects.equals(this.label, breadcrumbEventData.label);
   }
 
   @Override
@@ -78,7 +78,7 @@ public class BreakcrumbData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BreakcrumbData {\n");
+    sb.append("class BreadcrumbEventData {\n");
     sb.append("    sessionNumber: ").append(toIndentedString(sessionNumber)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("}");

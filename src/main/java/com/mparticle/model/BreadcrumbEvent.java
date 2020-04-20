@@ -12,7 +12,7 @@ import java.util.Objects;
 public class BreadcrumbEvent {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private BreakcrumbEventData data = null;
+  private BreadcrumbEventData data = null;
 
   /**
    * Gets or Sets eventType
@@ -50,7 +50,7 @@ public class BreadcrumbEvent {
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
   private EventTypeEnum eventType = EventTypeEnum.BREADCRUMB;
 
-  public BreadcrumbEvent data(BreakcrumbEventData data) {
+  public BreadcrumbEvent data(BreadcrumbEventData data) {
     this.data = data;
     return this;
   }
@@ -61,11 +61,11 @@ public class BreadcrumbEvent {
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
-  public BreakcrumbEventData getData() {
+  public BreadcrumbEventData getData() {
     return data;
   }
 
-  public void setData(BreakcrumbEventData data) {
+  public void setData(BreadcrumbEventData data) {
     this.data = data;
   }
 

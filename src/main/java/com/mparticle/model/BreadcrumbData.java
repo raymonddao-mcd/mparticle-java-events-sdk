@@ -6,10 +6,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 /**
- * BreakcrumbEventData
+ * BreadcrumbData
  */
 
-public class BreakcrumbEventData extends CommonEventData {
+public class BreadcrumbData {
   public static final String SERIALIZED_NAME_SESSION_NUMBER = "session_number";
   @SerializedName(SERIALIZED_NAME_SESSION_NUMBER)
   private Integer sessionNumber;
@@ -18,7 +18,7 @@ public class BreakcrumbEventData extends CommonEventData {
   @SerializedName(SERIALIZED_NAME_LABEL)
   private String label;
 
-  public BreakcrumbEventData sessionNumber(Integer sessionNumber) {
+  public BreadcrumbData sessionNumber(Integer sessionNumber) {
     this.sessionNumber = sessionNumber;
     return this;
   }
@@ -37,7 +37,7 @@ public class BreakcrumbEventData extends CommonEventData {
     this.sessionNumber = sessionNumber;
   }
 
-  public BreakcrumbEventData label(String label) {
+  public BreadcrumbData label(String label) {
     this.label = label;
     return this;
   }
@@ -64,9 +64,9 @@ public class BreakcrumbEventData extends CommonEventData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BreakcrumbEventData breakcrumbEventData = (BreakcrumbEventData) o;
-    return Objects.equals(this.sessionNumber, breakcrumbEventData.sessionNumber) &&
-        Objects.equals(this.label, breakcrumbEventData.label);
+    BreadcrumbData breadcrumbData = (BreadcrumbData) o;
+    return Objects.equals(this.sessionNumber, breadcrumbData.sessionNumber) &&
+        Objects.equals(this.label, breadcrumbData.label);
   }
 
   @Override
@@ -78,7 +78,7 @@ public class BreakcrumbEventData extends CommonEventData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BreakcrumbEventData {\n");
+    sb.append("class BreadcrumbData {\n");
     sb.append("    sessionNumber: ").append(toIndentedString(sessionNumber)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("}");
