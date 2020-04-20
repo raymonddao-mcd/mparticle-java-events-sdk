@@ -53,6 +53,14 @@ The full schema of a batch is documented in the [mParticle Events API overview](
 Batch batch = new Batch();
 batch.environment(Batch.Environment.DEVELOPMENT);
 
+// Set a Data Plan
+Context context = new Context();
+DataPlanContext dpContext = new DataPlanContext();
+dpContext.planId("mobile_data_plan");
+dpContext.planVersion(2);
+context.dataPlan(dpContext);
+batch.context(context);
+
 // Set user identities
 batch.userIdentities(
         new UserIdentities()
