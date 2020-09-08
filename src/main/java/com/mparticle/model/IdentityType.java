@@ -29,7 +29,25 @@ public enum IdentityType {
   
   OTHER_ID_3("other_id_3"),
   
-  OTHER_ID_4("other_id_4");
+  OTHER_ID_4("other_id_4"),
+
+  OTHER_ID_5("other_id_5"),
+
+  OTHER_ID_6("other_id_6"),
+
+  OTHER_ID_7("other_id_7"),
+
+  OTHER_ID_8("other_id_8"),
+
+  OTHER_ID_9("other_id_9"),
+
+  OTHER_ID_10("other_id_10"),
+
+  MOBILE_PHONE("mobile_phone"),
+
+  PHONE_NUMBER_2("phone_number_2"),
+
+  PHONE_NUMBER_3("phone_number_3");
 
   private String value;
 
