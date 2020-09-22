@@ -62,6 +62,42 @@ public class UserIdentities {
   @SerializedName(SERIALIZED_NAME_OTHER_ID4)
   private String otherId4;
 
+  public static final String SERIALIZED_NAME_OTHER_ID5 = "other_id_5";
+  @SerializedName(SERIALIZED_NAME_OTHER_ID5)
+  private String otherId5;
+
+  public static final String SERIALIZED_NAME_OTHER_ID6 = "other_id_6";
+  @SerializedName(SERIALIZED_NAME_OTHER_ID6)
+  private String otherId6;
+
+  public static final String SERIALIZED_NAME_OTHER_ID7 = "other_id_7";
+  @SerializedName(SERIALIZED_NAME_OTHER_ID7)
+  private String otherId7;
+
+  public static final String SERIALIZED_NAME_OTHER_ID8 = "other_id_8";
+  @SerializedName(SERIALIZED_NAME_OTHER_ID8)
+  private String otherId8;
+
+  public static final String SERIALIZED_NAME_OTHER_ID9 = "other_id_9";
+  @SerializedName(SERIALIZED_NAME_OTHER_ID9)
+  private String otherId9;
+
+  public static final String SERIALIZED_NAME_OTHER_ID10 = "other_id_10";
+  @SerializedName(SERIALIZED_NAME_OTHER_ID10)
+  private String otherId10;
+
+  public static final String SERIALIZED_NAME_MOBILE_PHONE = "mobile_phone";
+  @SerializedName(SERIALIZED_NAME_MOBILE_PHONE)
+  private String mobilePhone;
+
+  public static final String SERIALIZED_NAME_PHONE_NUMBER_2 = "phone_number_2";
+  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER_2)
+  private String phoneNumber2;
+
+  public static final String SERIALIZED_NAME_PHONE_NUMBER_3 = "phone_number_3";
+  @SerializedName(SERIALIZED_NAME_PHONE_NUMBER_3)
+  private String phoneNumber3;
+
   public UserIdentities other(String other) {
     this.other = other;
     return this;
@@ -295,10 +331,10 @@ public class UserIdentities {
     return this;
   }
 
-   /**
+  /**
    * Get otherId4
    * @return otherId4
-  **/
+   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
   public String getOtherId4() {
@@ -309,6 +345,176 @@ public class UserIdentities {
     this.otherId4 = otherId4;
   }
 
+  public UserIdentities otherId5(String otherId5) {
+    this.otherId5 = otherId5;
+    return this;
+  }
+
+  /**
+   * Get otherId5
+   * @return otherId5
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getOtherId5() {
+    return otherId5;
+  }
+
+  public void setOtherId5(String otherId5) {
+    this.otherId5 = otherId5;
+  }
+
+  public UserIdentities otherId6(String otherId6) {
+    this.otherId6 = otherId6;
+    return this;
+  }
+
+  /**
+   * Get otherId6
+   * @return otherId6
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getOtherId6() {
+    return otherId6;
+  }
+
+  public void setOtherId6(String otherId6) {
+    this.otherId6 = otherId6;
+  }
+
+  public UserIdentities otherId7(String otherId7) {
+    this.otherId7 = otherId7;
+    return this;
+  }
+
+  /**
+   * Get otherId7
+   * @return otherId7
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getOtherId7() {
+    return otherId7;
+  }
+
+  public void setOtherId7(String otherId7) {
+    this.otherId7 = otherId7;
+  }
+
+  public UserIdentities otherId8(String otherId8) {
+    this.otherId8 = otherId8;
+    return this;
+  }
+
+  /**
+   * Get otherId8
+   * @return otherId8
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getOtherId8() {
+    return otherId8;
+  }
+
+  public void setOtherId8(String otherId8) {
+    this.otherId8 = otherId8;
+  }
+
+  public UserIdentities otherId9(String otherId9) {
+    this.otherId9 = otherId9;
+    return this;
+  }
+
+  /**
+   * Get otherId9
+   * @return otherId9
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getOtherId9() {
+    return otherId9;
+  }
+
+  public void setOtherId9(String otherId9) {
+    this.otherId9 = otherId9;
+  }
+
+  public UserIdentities otherId10(String otherId10) {
+    this.otherId10 = otherId10;
+    return this;
+  }
+
+  /**
+   * Get otherId10
+   * @return otherId10
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getOtherId10() {
+    return otherId10;
+  }
+
+  public void setOtherId10(String otherId10) {
+    this.otherId10 = otherId10;
+  }
+
+  public UserIdentities phoneNumber2(String phoneNumber2) {
+    this.phoneNumber2 = phoneNumber2;
+    return this;
+  }
+
+  /**
+   * Get phoneNumber2
+   * @return phoneNumber2
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getPhoneNumber2() {
+    return phoneNumber2;
+  }
+
+  public void setPhoneNumber2(String phoneNumber2) {
+    this.phoneNumber2 = phoneNumber2;
+  }
+
+  public UserIdentities phoneNumber3(String phoneNumber3) {
+    this.phoneNumber3 = phoneNumber3;
+    return this;
+  }
+
+  /**
+   * Get phoneNumber3
+   * @return phoneNumber3
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getPhoneNumber3() {
+    return phoneNumber3;
+  }
+
+  public void setPhoneNumber3(String phoneNumber3) {
+    this.phoneNumber3 = phoneNumber3;
+  }
+
+  public UserIdentities mobilePhone(String mobilePhone) {
+    this.mobilePhone = mobilePhone;
+    return this;
+  }
+
+  /**
+   * Get mobilePhone
+   * @return mobilePhone
+   **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public String getMobilePhone() {
+    return mobilePhone;
+  }
+
+  public void setMobilePhone(String mobilePhone) {
+    this.mobilePhone = mobilePhone;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -331,12 +537,22 @@ public class UserIdentities {
         Objects.equals(this.facebookCustomAudienceId, userIdentities.facebookCustomAudienceId) &&
         Objects.equals(this.otherId2, userIdentities.otherId2) &&
         Objects.equals(this.otherId3, userIdentities.otherId3) &&
-        Objects.equals(this.otherId4, userIdentities.otherId4);
+        Objects.equals(this.otherId4, userIdentities.otherId4) &&
+        Objects.equals(this.otherId5, userIdentities.otherId5) &&
+        Objects.equals(this.otherId6, userIdentities.otherId6) &&
+        Objects.equals(this.otherId7, userIdentities.otherId7) &&
+        Objects.equals(this.otherId8, userIdentities.otherId8) &&
+        Objects.equals(this.otherId9, userIdentities.otherId9) &&
+        Objects.equals(this.otherId10, userIdentities.otherId10) &&
+        Objects.equals(this.phoneNumber2, userIdentities.phoneNumber2) &&
+        Objects.equals(this.phoneNumber3, userIdentities.phoneNumber3) &&
+        Objects.equals(this.mobilePhone, userIdentities.mobilePhone);
+
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(other, customerId, facebook, twitter, google, microsoft, yahoo, email, alias, facebookCustomAudienceId, otherId2, otherId3, otherId4);
+    return Objects.hash(other, customerId, facebook, twitter, google, microsoft, yahoo, email, alias, facebookCustomAudienceId, otherId2, otherId3, otherId4, otherId5, otherId6, otherId7, otherId8, otherId9, otherId10, phoneNumber2, phoneNumber3, mobilePhone);
   }
 
 
@@ -357,6 +573,15 @@ public class UserIdentities {
     sb.append("    otherId2: ").append(toIndentedString(otherId2)).append("\n");
     sb.append("    otherId3: ").append(toIndentedString(otherId3)).append("\n");
     sb.append("    otherId4: ").append(toIndentedString(otherId4)).append("\n");
+    sb.append("    otherId5: ").append(toIndentedString(otherId5)).append("\n");
+    sb.append("    otherId6: ").append(toIndentedString(otherId6)).append("\n");
+    sb.append("    otherId7: ").append(toIndentedString(otherId7)).append("\n");
+    sb.append("    otherId8: ").append(toIndentedString(otherId8)).append("\n");
+    sb.append("    otherId9: ").append(toIndentedString(otherId9)).append("\n");
+    sb.append("    otherId10: ").append(toIndentedString(otherId10)).append("\n");
+    sb.append("    phoneNumber2: ").append(toIndentedString(phoneNumber2)).append("\n");
+    sb.append("    phoneNumber3: ").append(toIndentedString(phoneNumber3)).append("\n");
+    sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
