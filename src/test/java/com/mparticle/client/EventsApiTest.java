@@ -38,6 +38,7 @@ public class EventsApiTest {
         batch.userIdentities(new UserIdentities()
                 .customerId("1234")
                 .email("example@foo.com")
+                .mobilePhone("555-123-4567")
         );
 
 
