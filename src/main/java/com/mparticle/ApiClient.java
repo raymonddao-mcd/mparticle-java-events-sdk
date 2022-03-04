@@ -3,6 +3,7 @@ package com.mparticle;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.mparticle.client.HttpBasicAuth;
+import com.sun.tools.javac.util.StringUtils;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
@@ -24,6 +25,7 @@ public class ApiClient {
   protected OkHttpClient.Builder okBuilder;
   protected Retrofit.Builder adapterBuilder;
   protected JSON json;
+  protected String pod;
 
   /**
    * Create an API client with your mParticle API key and secret
@@ -39,11 +41,25 @@ public class ApiClient {
     addAuthorization("basic", auth);
   }
 
+  public ApiClient(String apiKey, String apiSecret, String pod) {
+    this.pod = pod;
+    apiAuthorizations = new LinkedHashMap<String, Interceptor>();
+    createDefaultAdapter();
+    HttpBasicAuth auth = new HttpBasicAuth();
+    auth.setCredentials(apiKey, apiSecret);
+    addAuthorization("basic", auth);
+  }
+
   public void createDefaultAdapter() {
     json = new JSON();
     okBuilder = new OkHttpClient.Builder();
 
-    String baseUrl = "https://s2s.mparticle.com/v2";
+    String baseUrl;
+    if(this.pod==null){
+      baseUrl = "https://s2s.mparticle.com/v2";
+    }else {
+      baseUrl = "https://s2s."+this.pod+".mparticle.com/v2";
+    }
     if (!baseUrl.endsWith("/"))
       baseUrl = baseUrl + "/";
 
