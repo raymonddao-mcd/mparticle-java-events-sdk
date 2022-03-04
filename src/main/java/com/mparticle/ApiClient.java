@@ -20,10 +20,10 @@ import java.util.Map;
 
 public class ApiClient {
 
-  private Map<String, Interceptor> apiAuthorizations;
-  private OkHttpClient.Builder okBuilder;
-  private Retrofit.Builder adapterBuilder;
-  private JSON json;
+  protected Map<String, Interceptor> apiAuthorizations;
+  protected OkHttpClient.Builder okBuilder;
+  protected Retrofit.Builder adapterBuilder;
+  protected JSON json;
 
   /**
    * Create an API client with your mParticle API key and secret
