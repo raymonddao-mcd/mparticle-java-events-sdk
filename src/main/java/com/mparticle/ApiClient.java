@@ -3,11 +3,11 @@ package com.mparticle;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.mparticle.client.HttpBasicAuth;
-import com.sun.tools.javac.util.StringUtils;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import org.apache.commons.lang3.StringUtils;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -55,7 +55,7 @@ public class ApiClient {
     okBuilder = new OkHttpClient.Builder();
 
     String baseUrl;
-    if(this.pod==null){
+    if(StringUtils.isEmpty(this.pod)){
       baseUrl = "https://s2s.mparticle.com/v2";
     }else {
       baseUrl = "https://s2s."+this.pod+".mparticle.com/v2";
